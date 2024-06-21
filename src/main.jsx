@@ -5,8 +5,6 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import About from './component/About.jsx';
 import Contact from './component/Contact.jsx';
 import Error from './component/Error.jsx';
-
-
 const AppLayOut = () =>
 {
   return <div >
@@ -14,9 +12,7 @@ const AppLayOut = () =>
     <Outlet></Outlet>
   </div>;
 };
-
 const AppRouter = createBrowserRouter([
-
   {
     path: '/'
     , element: <AppLayOut></AppLayOut>,
@@ -37,9 +33,6 @@ const AppRouter = createBrowserRouter([
     ],
     errorElement: <Error></Error>
   }
-
 ]);
-
-
 ReactDOM.createRoot(document.getElementById('root')).render(<RouterProvider router={AppRouter}></RouterProvider>
 );

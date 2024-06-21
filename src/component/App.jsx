@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Products from "./Products";
-
+import { Link } from "react-router-dom";
 export default function App()
 {
   const [listOfProducts, setListOfProducts] = useState([]);
@@ -16,13 +16,23 @@ export default function App()
   };
   console.log(listOfProducts);
   return (
+
     <div id='product'>
       {
         listOfProducts.map((product) =>
         {
-          return (<Products key={product.id} data={product}></Products>);
+          return (
+
+
+
+            <Link key={product.id}>
+              <Products data={product}></Products>
+            </Link>
+
+          );
         })
       }
+
     </div>
   );
 }
