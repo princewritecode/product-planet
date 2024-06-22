@@ -16,23 +16,19 @@ export default function App()
   };
   console.log(listOfProducts);
   return (
-
     <div id='product'>
       {
         listOfProducts.map((product) =>
         {
           return (
-
-
-
-            <Link key={product.id}>
-              <Products data={product}></Products>
-            </Link>
-
+            <div key={product.id} className="product-wrapper">
+              <Link to={`/products/${product.id}`} className="product-link">
+                <Products data={product}></Products>
+              </Link>
+            </div>
           );
         })
       }
-
     </div>
   );
 }
